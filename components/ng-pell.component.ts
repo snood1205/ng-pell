@@ -3,7 +3,7 @@ import pell from 'pell'
 
 @Component({
   selector: 'ng-pell-component',
-  templateUrl: './ng-pell.component.html'
+  template: `<div class="pell" id="pell"></div>`
 })
 export class NgPellComponent implements OnInit {
   @Input() actions: Array<string | object>
