@@ -48,9 +48,9 @@ mkdirp@^0.5.1:
   dependencies:
     minimist "0.0.8"
 
-pell@^0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/pell/-/pell-0.4.0.tgz#bf2092ece7bdaa26aaa552779b2f40f2d4536130"
+pell@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/pell/-/pell-0.7.0.tgz#46b3fcdfa8dd7e5999f73c550a337ecc80193dcc"
 
 reflect-metadata@^0.1.2:
   version "0.1.10"
