@@ -18,6 +18,9 @@ var NgPellModule = (function () {
             declarations: [
                 NgPellComponent
             ],
+            entryComponents: [
+                NgPellComponent
+            ],
             exports: [
                 NgPellComponent
             ]

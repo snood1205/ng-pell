@@ -9,6 +9,9 @@ import {NgPellComponent} from './ng-pell.component'
   declarations: [
     NgPellComponent
   ],
+  entryComponents: [
+    NgPellComponent
+  ],
   exports: [
     NgPellComponent
   ]
