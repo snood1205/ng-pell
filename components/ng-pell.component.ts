@@ -3,19 +3,25 @@ import pell from 'pell'
 
 @Component({
   selector: 'ng-pell-component',
-  template: `<div class="pell" id="pell"></div>`
+  template: `
+      <div class="pell" id="pell-$$-internal"></div>`
 })
 export class NgPellComponent implements OnInit {
-  @Input() actions: Array<string | object>
-  @Input() classes: object[]
+  @Input() actions?: Array<string | object>
+  @Input() classes?: object
   @Input() onChange: Function
 
   ngOnInit () {
-    pell({
-      actions: this.actions,
-      classes: this.classes,
+    pell.init({
+      element: document.getElementById('pell-$$-internal'),
       onChange: this.onChange,
-      root: 'pell'
+      styleWithCSS: false,
+      actions: this.actions || ['bold', 'underline'],
+      classes: this.classes || {
+        actionbar: 'pell-actionbar',
+        button: 'pell-button',
+        content: 'pell-content'
+      }
     })
   }
 }
