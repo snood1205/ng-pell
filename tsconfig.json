@@ -1,18 +1,19 @@
 {
-  "compileOnSave": false,
   "compilerOptions": {
-    "outDir": "./dist",
-    "module": "commonjs",
     "target": "es5",
+    "module": "es2015",
     "sourceMap": true,
+    "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "lib": [
-      "es2016",
-      "dom"
-    ]
+    "declaration": true,
+    "outDir": "./dist",
+    "lib": ["es2015", "dom"]
   },
-  "exclude": [
-    "node_modules"
-  ]
+  "files": [
+    "./components/ng-pell.module.ts"
+  ],
+  "angularCompilerOptions": {
+    "skipTemplateCodegen": true
+  }
 }
