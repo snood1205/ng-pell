@@ -1,6 +1,6 @@
 {
   "name": "ng-pell",
-  "version": "0.5.0-beta",
+  "version": "0.5.1-beta",
   "description": "An angular wrapper for the pell library",
   "main": "ng-pell.bundle.js",
   "module": "ng-pell.module.js",
