@@ -1,12 +1,14 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import pell from 'pell';
 var NgPellComponent = (function () {
     function NgPellComponent() {
+        this.onChange = new EventEmitter();
     }
     NgPellComponent.prototype.ngOnInit = function () {
+        var _this = this;
         pell.init({
             element: document.getElementById('pell-$$-internal'),
-            onChange: this.onChange,
+            onChange: function (html) { return _this.onChange.emit(html); },
             styleWithCSS: false,
             actions: this.actions || ['bold', 'underline'],
             classes: this.classes || {
@@ -19,7 +21,7 @@ var NgPellComponent = (function () {
     NgPellComponent.decorators = [
         { type: Component, args: [{
                     selector: 'ng-pell-component',
-                    template: "\n      <div class=\"pell\" id=\"pell-$$-internal\"></div>"
+                    template: "<div class=\"pell\" id=\"pell-$$-internal\"></div>"
                 },] },
     ];
     /** @nocollapse */
@@ -27,7 +29,7 @@ var NgPellComponent = (function () {
     NgPellComponent.propDecorators = {
         'actions': [{ type: Input },],
         'classes': [{ type: Input },],
-        'onChange': [{ type: Input },],
+        'onChange': [{ type: Output },],
     };
     return NgPellComponent;
 }());
