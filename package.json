@@ -1,12 +1,14 @@
 {
   "name": "ng-pell",
-  "version": "0.7.0",
+  "version": "0.7.2",
   "description": "An angular wrapper for the pell library",
   "main": "./dist/ng-pell.bundle.js",
   "module": "./dist/ng-pell.module.js",
   "jsnext:main": "./dist/ng-pell.module.js",
   "types": "./dist/ng-pell.module.d.ts",
   "repository": "https://github.com/snood1205/ng-pell",
+  "keywords: ["Angular", "Angular 2", "Angular 4", "pell", "wysiwyg"],
+  "author": "Eli Sadoff <snood1205@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "@angular/common": "^4.3.1",
