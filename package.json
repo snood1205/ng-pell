@@ -2,6 +2,7 @@
   "name": "ng-pell",
   "version": "0.7.2",
   "description": "An angular wrapper for the pell library",
+  "outDir": "./dist",
   "main": "./dist/ng-pell.bundle.js",
   "module": "./dist/ng-pell.module.js",
   "jsnext:main": "./dist/ng-pell.module.js",
