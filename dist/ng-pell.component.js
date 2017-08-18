@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, forwardRef, Input, Output } from '@angular/core';
 import pell from 'pell';
+import { NG_VALUE_ACCESSOR } from '@angular/forms';
 var NgPellComponent = (function () {
     function NgPellComponent() {
         this.styleWithCSS = false;
@@ -40,7 +41,12 @@ var NgPellComponent = (function () {
     NgPellComponent.decorators = [
         { type: Component, args: [{
                     selector: 'ng-pell-component',
-                    template: "\n      <div class=\"pell\" id=\"pell-$$-internal\"></div>"
+                    template: "\n      <div class=\"pell\" id=\"pell-$$-internal\"></div>",
+                    providers: [{
+                            provide: NG_VALUE_ACCESSOR,
+                            useExisting: forwardRef(function () { return NgPellComponent; }),
+                            multi: true
+                        }]
                 },] },
     ];
     /** @nocollapse */

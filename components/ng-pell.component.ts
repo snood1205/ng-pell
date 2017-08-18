@@ -1,11 +1,16 @@
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core'
+import { Component, EventEmitter, forwardRef, Input, OnChanges, OnInit, Output } from '@angular/core'
 import pell from 'pell'
-import { ControlValueAccessor } from '@angular/forms'
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms'
 
 @Component({
   selector: 'ng-pell-component',
   template: `
-      <div class="pell" id="pell-$$-internal"></div>`
+      <div class="pell" id="pell-$$-internal"></div>`,
+  providers: [{
+    provide: NG_VALUE_ACCESSOR,
+    useExisting: forwardRef(() => NgPellComponent),
+    multi: true
+  }]
 })
 export class NgPellComponent implements OnInit, OnChanges, ControlValueAccessor {
   @Input() actions?: Array<string | object>
