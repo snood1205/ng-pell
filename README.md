@@ -13,12 +13,10 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'example-component',
-  template: `<ng-pell-component (onChange)="print($event)"></ng-pell-component>`
+  template: `<ng-pell-component [(ngModel)]="html"></ng-pell-component>`
 })
 export class ExampleComponent {
-  print(html) {
-    console.log(html);
-  }
+  html: string
 }
 ```
 

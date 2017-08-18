@@ -7,14 +7,26 @@
   "jsnext:main": "./dist/ng-pell.module.js",
   "types": "./dist/ng-pell.module.d.ts",
   "repository": "https://github.com/snood1205/ng-pell",
-  "keywords: ["Angular", "Angular 2", "Angular 4", "pell", "wysiwyg"],
-  "author": "Eli Sadoff <snood1205@gmail.com>",
+  "keywords": [
+    "Angular",
+    "Angular 2",
+    "Angular 4",
+    "pell",
+    "wysiwyg"
+  ],
+  "author": {
+    "name": "Eli Sadoff",
+    "email": "snood1205@gmail.com",
+    "github": "snood1205"
+  },
   "license": "MIT",
   "dependencies": {
-    "@angular/common": "^4.3.1",
-    "@angular/compiler": "^4.3.1",
-    "@angular/compiler-cli": "^4.3.1",
-    "@angular/core": "^4.3.1",
+    "@angular/common": "^4.3.5",
+    "@angular/compiler": "^4.3.5",
+    "@angular/compiler-cli": "^4.3.5",
+    "@angular/core": "^4.3.5",
+    "@angular/forms": "^4.3.5",
+    "@angular/platform-browser": "^4.3.5",
     "jasmine": "^2.7.0",
     "pell": "^0.7.0",
     "rxjs": "^5.4.2",
@@ -22,16 +34,7 @@
     "zone.js": "^0.8.14"
   },
   "scripts": {
-    "prepublish": "npm run update-contrib && npm run update-coc && ./node_modules/.bin/ngc -p ./tsconfig.json",
-    "postpublish": "git add ./dist && git commit -m 'version(BUMP): upgraded version' && git tag `npm view ng-pell version` && git push && git push --tags",
-    "test": "jasmine",
-    "update-contrib": "weallcontribute -o . && git add CONTRIBUTING.md && git commit -m 'docs(contributing): updated CONTRIBUTING.md'",
-    "update-coc": "weallbehave -o . && git add CODE_OF_CONDUCT.md && git commit -m 'docs(coc): updated CODE_OF_CONDUCT.md'"
-  },
-  "author": {
-    "name": "Eli Sadoff",
-    "email": "snood1205@gmail.com",
-    "github": "snood1205"
+    "test": "jasmine"
   },
   "devDependencies": {
     "weallbehave": "^1.2.0",

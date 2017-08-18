@@ -2,15 +2,20 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import pell from 'pell';
 var NgPellComponent = (function () {
     function NgPellComponent() {
+        this.styleWithCSS = false;
         this.onChange = new EventEmitter();
+        this.onTouched = new EventEmitter();
     }
     NgPellComponent.prototype.ngOnInit = function () {
         var _this = this;
         pell.init({
             element: document.getElementById('pell-$$-internal'),
-            onChange: function (html) { return _this.onChange.emit(html); },
-            styleWithCSS: false,
-            actions: this.actions || ['bold', 'underline'],
+            onChange: function (html) {
+                _this.onChange.emit(html);
+                _this.html = html;
+            },
+            styleWithCSS: this.styleWithCSS,
+            actions: this.actions || ['bold', 'underline', 'italics'],
             classes: this.classes || {
                 actionbar: 'pell-actionbar',
                 button: 'pell-button',
@@ -18,10 +23,24 @@ var NgPellComponent = (function () {
             }
         });
     };
+    NgPellComponent.prototype.ngOnChanges = function () {
+        if (this.propagateChange) {
+            this.propagateChange(this.html);
+        }
+    };
+    NgPellComponent.prototype.writeValue = function (html) {
+        this.html = html;
+    };
+    NgPellComponent.prototype.registerOnChange = function (fn) {
+        this.propagateChange = fn;
+    };
+    NgPellComponent.prototype.registerOnTouched = function () {
+        this.onTouched.emit(this.html);
+    };
     NgPellComponent.decorators = [
         { type: Component, args: [{
                     selector: 'ng-pell-component',
-                    template: "<div class=\"pell\" id=\"pell-$$-internal\"></div>"
+                    template: "\n      <div class=\"pell\" id=\"pell-$$-internal\"></div>"
                 },] },
     ];
     /** @nocollapse */
@@ -29,7 +48,9 @@ var NgPellComponent = (function () {
     NgPellComponent.propDecorators = {
         'actions': [{ type: Input },],
         'classes': [{ type: Input },],
+        'styleWithCSS': [{ type: Input },],
         'onChange': [{ type: Output },],
+        'onTouched': [{ type: Output },],
     };
     return NgPellComponent;
 }());

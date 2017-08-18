@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgPellComponent } from './ng-pell.component';
+import { FormsModule } from '@angular/forms';
 var NgPellModule = (function () {
     function NgPellModule() {
     }
     NgPellModule.decorators = [
         { type: NgModule, args: [{
                     imports: [
-                        CommonModule
+                        CommonModule,
+                        FormsModule
                     ],
                     declarations: [
                         NgPellComponent

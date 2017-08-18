@@ -1,7 +1,16 @@
-import { EventEmitter, OnInit } from '@angular/core';
-export declare class NgPellComponent implements OnInit {
+import { EventEmitter, OnChanges, OnInit } from '@angular/core';
+import { ControlValueAccessor } from '@angular/forms';
+export declare class NgPellComponent implements OnInit, OnChanges, ControlValueAccessor {
     actions?: Array<string | object>;
     classes?: object;
-    onChange: EventEmitter<string>;
+    styleWithCSS: boolean;
+    onChange?: EventEmitter<string>;
+    onTouched?: EventEmitter<string>;
+    html: string;
+    private propagateChange;
     ngOnInit(): void;
+    ngOnChanges(): void;
+    writeValue(html: string): void;
+    registerOnChange(fn: (html: string) => void): void;
+    registerOnTouched(): void;
 }
