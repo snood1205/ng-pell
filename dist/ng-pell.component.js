@@ -16,7 +16,7 @@ var NgPellComponent = (function () {
                 _this.html = html;
             },
             styleWithCSS: this.styleWithCSS,
-            actions: this.actions || ['bold', 'underline', 'italics'],
+            actions: this.actions || ['bold', 'underline'],
             classes: this.classes || {
                 actionbar: 'pell-actionbar',
                 button: 'pell-button',
