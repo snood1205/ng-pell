@@ -1,6 +1,6 @@
 {
   "name": "ng-pell",
-  "version": "0.7.2",
+  "version": "0.7.4",
   "description": "An angular wrapper for the pell library",
   "outDir": "./dist",
   "main": "./dist/ng-pell.bundle.js",
@@ -20,7 +20,7 @@
     "email": "snood1205@gmail.com",
     "github": "snood1205"
   },
-  "license": "MIT",
+  "license": "GPLv3",
   "dependencies": {
     "@angular/common": "^4.3.5",
     "@angular/compiler": "^4.3.5",
