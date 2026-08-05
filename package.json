@@ -1,12 +1,20 @@
 {
   "name": "ng-pell",
-  "version": "0.7.4",
+  "version": "0.7.5",
   "description": "An angular wrapper for the pell library",
   "outDir": "./dist",
-  "main": "./dist/ng-pell.bundle.js",
+  "main": "./dist/ng-pell.module.js",
   "module": "./dist/ng-pell.module.js",
   "jsnext:main": "./dist/ng-pell.module.js",
   "types": "./dist/ng-pell.module.d.ts",
+  "files": [
+    "dist",
+    "components",
+    "tsconfig.json",
+    "LICENSE.txt",
+    "gpl.txt",
+    "README.md"
+  ],
   "repository": "https://github.com/snood1205/ng-pell",
   "keywords": [
     "Angular",
@@ -20,8 +28,22 @@
     "email": "snood1205@gmail.com",
     "github": "snood1205"
   },
-  "license": "GPLv3",
+  "license": "GPL-3.0",
   "dependencies": {
+    "pell": "^0.7.0"
+  },
+  "peerDependencies": {
+    "@angular/common": ">=4.3.5",
+    "@angular/core": ">=4.3.5",
+    "@angular/forms": ">=4.3.5",
+    "rxjs": ">=5.4.2",
+    "zone.js": ">=0.8.14"
+  },
+  "scripts": {
+    "build": "ngc -p tsconfig.json",
+    "test": "jasmine"
+  },
+  "devDependencies": {
     "@angular/common": "^4.3.5",
     "@angular/compiler": "^4.3.5",
     "@angular/compiler-cli": "^4.3.5",
@@ -29,16 +51,10 @@
     "@angular/forms": "^4.3.5",
     "@angular/platform-browser": "^4.3.5",
     "jasmine": "^2.7.0",
-    "pell": "^0.7.0",
     "rxjs": "^5.4.2",
     "typescript": "^2.4.2",
-    "zone.js": "^0.8.14"
-  },
-  "scripts": {
-    "test": "jasmine"
-  },
-  "devDependencies": {
     "weallbehave": "^1.2.0",
-    "weallcontribute": "^1.0.8"
+    "weallcontribute": "^1.0.8",
+    "zone.js": "^0.8.14"
   }
 }
