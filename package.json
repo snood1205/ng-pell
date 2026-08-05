@@ -41,7 +41,6 @@
   },
   "scripts": {
     "build": "ngc -p tsconfig.json",
-    "prepublishOnly": "npm run build",
     "test": "jasmine"
   },
   "devDependencies": {
